@@ -1,17 +1,242 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-content overflow-scroll="true">
+    <ion-grid>
+      <ion-row>
+        <ion-toolbar>
+          <div style="width:100%;height:60px;background-color:rgb(158, 226, 132);padding-top:1px">
+            <ion-buttons slot="start" style="margin-top:10px">
+              <ion-col size-md="2" size-lg="2" size-xs="3">
+                <ion-button style="background-color: rgb(16, 168, 16)">Recharge</ion-button>
+              </ion-col>
+              <ion-col size-md="9" size-lg="9" size-xs="8">
+                <ion-button style="background-color:white">Read Rule</ion-button>
+              </ion-col>
+  
+              <ion-col size-md="1" size-lg="1" size-xs="12">
+                <ion-icon name="sync" style="color:white;font-weight: bolder;"></ion-icon>
+              </ion-col>
+  
+            </ion-buttons>
+  
+          </div>
+        </ion-toolbar>
+      </ion-row>
+      <ion-row>
+        <ion-col size-md="12" size-lg="12" size-xs="12">
+        <div style="height:30px">
+  
+          <ion-tabs>
+  
+            <ion-tab-bar slot="top">
+              <ion-toolbar>
+                <ion-tab-button tab="Parity">
+  
+                  <ion-label>Parity</ion-label>
+                </ion-tab-button>
+              </ion-toolbar>
+  
+              <ion-toolbar>
+                <ion-tab-button tab="Sapre">
+                  <ion-label>Sapre</ion-label>
+                </ion-tab-button>
+              </ion-toolbar>
+              <ion-toolbar>
+                <ion-tab-button tab="Bcone">
+  
+                  <ion-label>Bcone</ion-label>
+                </ion-tab-button>
+              </ion-toolbar>
+              <ion-toolbar>
+                <ion-tab-button tab="Emerd">
+  
+                  <ion-label>Emerd</ion-label>
+  
+                </ion-tab-button>
+              </ion-toolbar>
+            </ion-tab-bar>
+          </ion-tabs>
+        </div>
+      </ion-col>
+      </ion-row>
+  
+      <div style="width:100%;margin-left:50px;margin-top: 70px;">
+        <ion-row>
+          <ion-col size-md="6" size-lg="9" size-xs="6">
+            <ion-icon name="trophy-sharp" style="margin-left:50px"></ion-icon>Period
+  
+            <p style="margin-left:50px">20201021443</p>
+  
+          </ion-col>
+  
+          <ion-col size-md="6" size-lg="3" size-xs="6">
+            <ion-label style="margin-left:50px">Count Down</ion-label>
+  
+            <p><button style="margin-left:50px">{{counter.min}} : {{counter.sec}}</button></p>
+          </ion-col>
+        </ion-row>
+      </div>
+  
+      <div style="padding:10px;margin-left:50px;margin-top:20px">
+        <ion-row>
+          <ion-col size-md="4" size-lg="5" size-xs="4">
+            <ion-button color="success" (click)="clickEvent()">Join Green</ion-button>
+          </ion-col>
+          <ion-col size-md="4" size-lg="5" size-xs="4">
+            <ion-button (click)="clickEvent()">Join Violet</ion-button>
+          </ion-col>
+          <ion-col size-md="4" size-lg="2" size-xs="2">
+            <ion-button color="danger" (click)="clickEvent()">Join Red</ion-button>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div style="width:100%;margin-top:20px;margin-left:100px">
+        <ion-row>
+          <ion-col size-md="2" size-lg="2" size-xs="12">
+            <ion-button style="width:100px;" (click)="clickEvent()">0</ion-button>
+          </ion-col>
+          <ion-col size-md="2" size-lg="2" size-xs="12">
+            <ion-button style="width:100px;" (click)="clickEvent()">1</ion-button>
+          </ion-col>
+          <ion-col size-md="2" size-lg="2" size-xs="12">
+            <ion-button style="width:100px;" (click)="clickEvent()">2</ion-button>
+          </ion-col>
+          <ion-col size-md="2" size-lg="2" size-xs="12">
+            <ion-button style="width:100px;" (click)="clickEvent()">3</ion-button>
+          </ion-col>
+          <ion-col size-md="2" size-lg="3" size-xs="12">
+            <ion-button style="width:100px;" (click)="clickEvent()">4</ion-button>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div style="width:100%;margin-top:20px;margin-left:100px">
+        <ion-row>
+          <ion-col size-md="2" size-lg="2" size-xs="12">
+            <ion-button style="width:100px;" (click)="clickEvent()">5</ion-button>
+          </ion-col>
+          <ion-col size-md="2" size-lg="2" size-xs="12">
+            <ion-button style="width:100px;" (click)="clickEvent()">6</ion-button>
+          </ion-col>
+          <ion-col size-md="2" size-lg="2" size-xs="12">
+            <ion-button style="width:100px;" (click)="clickEvent()">7</ion-button>
+          </ion-col>
+          <ion-col size-md="2" size-lg="2" size-xs="12">
+            <ion-button style="width:100px;" (click)="clickEvent()">8</ion-button>
+          </ion-col>
+          <ion-col size-md="2" size-lg="3" size-xs="12">
+            <ion-button style="width:100px;" (click)="clickEvent()">9</ion-button>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div style="height:70px;background-color:gray;width:100%;margin-top:30px">
+        <ion-row>
+          <ion-col size="12" size-sm>
+            <div style="text-align: center;">
+  
+              <ion-icon name="trophy-sharp" style="margin-top:5px"></ion-icon>
+              <p>Emerd Record</p>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div>
+        <table style="width:100%;margin-bottom:5px;text-align: center;margin-top:20px">
+          <thead style="border-bottom: 1px solid gray;height:40px">
+            <th>Period</th>
+            <th>Price</th>
+            <th>Number</th>
+            <th>Result</th>
+  
+          </thead>
+          <tr style="border-bottom: 1px solid gray;height:40px">
+            <td>20201021442</td>
+            <td>70851</td>
+            <td>1</td>
+            <td>
+              <ion-icon name="ellipse" style="color:green"></ion-icon>
+            </td>
+  
+  
+          </tr>
+          <tr style="border-bottom: 1px solid gray;height:40px">
+            <td>20201021441</td>
+            <td>70855</td>
+            <td>5</td>
+            <td>
+              <ion-icon name="ellipse" style="color:green"></ion-icon>
+              <ion-icon name="ellipse" style="color:violet"></ion-icon>
+            </td>
+          </tr>
+          <tr style="border-bottom: 1px solid gray;height:40px">
+            <td>20201021440</td>
+            <td>70893</td>
+            <td>3</td>
+            <td>
+              <ion-icon name="ellipse" style="color:green"></ion-icon>
+            </td>
+          </tr>
+          <tr style="border-bottom: 1px solid gray;height:40px">
+            <td>20201021439</td>
+            <td>70900</td>
+            <td>8</td>
+            <td>
+              <ion-icon name="ellipse" style="color:red"></ion-icon>
+              <ion-icon name="ellipse" style="color:violet"></ion-icon>
+            </td>
+          </tr>
+  
+        </table>
+      </div>
+  
+  
+      <ion-toolbar>
+        <ion-tabs>
+          <ion-tab-bar>
+            <ion-toolbar>
+              <ion-tab-button tab="home">
+                <ion-icon name="home"></ion-icon>
+                <ion-label>Home</ion-label>
+              </ion-tab-button>
+            </ion-toolbar>
+            <ion-toolbar>
+              <ion-tab-button tab="lucky">
+                <ion-icon name="trophy-sharp"></ion-icon>
+                <ion-label>Lucky</ion-label>
+              </ion-tab-button>
+            </ion-toolbar>
+            <ion-toolbar>
+              <ion-tab-button tab="activity">
+                <ion-icon name="trophy-sharp"></ion-icon>
+                <ion-label>Activity</ion-label>
+              </ion-tab-button>
+            </ion-toolbar>
+            <ion-toolbar>
+              <ion-tab-button tab="settings" routerLink="/tabs/tab3/dashboard">
+                <ion-icon name="person"></ion-icon>
+                <ion-label>My</ion-label>
+              </ion-tab-button>
+            </ion-toolbar>
+          </ion-tab-bar>
+  
+        </ion-tabs>
+      </ion-toolbar>
+    </ion-grid>
+  </ion-content>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
-</ion-content>
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

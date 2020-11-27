@@ -1,17 +1,48 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+ 
+  <ion-header [translucent]="true">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title>
+        SignUp
+      </ion-title>
     </ion-toolbar>
   </ion-header>
+  
+  <ion-content class="center">
+    <ion-grid>
+      <ion-row style="height:200px"></ion-row>
+      <ion-row color="primary" justify-content-center>
+        
+        <ion-col size-md="3"size-lg="3" size-xs="3"></ion-col>
+       <ion-col size-md="6"size-lg="6" size-xs="6">
+    
+    
+    <ion-list class="ilist">
+      <ion-item>
+        <ion-input type="text"  placeholder="Mobile Number"[(ngModel)]="mobile" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="password" placeholder="Password"[(ngModel)]="password" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Recommendation Code"[(ngModel)]="code"></ion-input>
+      </ion-item>
+      <br>
+      <ion-checkbox [(ngModel)]="accept" required></ion-checkbox>&nbsp;
+      <ion-label >I agree 
+        <a href="#">PRIVACY POLICY</a>  
+      </ion-label>
+    </ion-list>
+    <br>
+    <div class ="button"><ion-button expand="block"  (click)="register()">Register</ion-button></div>
+  
+       </ion-col>
+    </ion-row>
+      </ion-grid>
+    
+  </ion-content>
+  
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+ 
 </ion-content>
