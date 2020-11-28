@@ -12,7 +12,7 @@ export class Tab2Page {
   password: string
   returnURL: string = ""
   constructor(public navCtrl: NavController, private router: Router, private ser: ValiduserService) { }
-  login(){
+  login() {
     console.log("Username:" + this.mobilenumber);
     console.log("Password:" + this.password)
     this.validateuser();
@@ -21,19 +21,25 @@ export class Tab2Page {
     console.log("FORGET PASSWORD")
   }
   validateuser() {
-    if(this.mobilenumber!=undefined && this.password!=undefined){
-    if(this.mobilenumber==this.ser.username && this.password==this.ser.password) 
-    {
-      console.log(this.mobilenumber)
-      console.log(this.ser.username)
+    if (this.mobilenumber != undefined && this.password != undefined) {
+      if (this.mobilenumber == this.ser.username && this.password == this.ser.password) {
+        console.log(this.mobilenumber)
+        console.log(this.ser.username)
+        // setTimeout(function () {
+        //   document.getElementById("load").style.visibility = "visible";
+        // }, 1000);
+        this.returnURL = "/tab3"
+        this.router.navigate([this.returnURL])
+     
+    }
+      else {
+        alert("invalid login")
+      }
+    }
 
-      this.returnURL = "/tabs/tab3"
-      this.router.navigate([this.returnURL])
-    }
-    else{
-      alert("invalid login")
-    }
   }
-    
+  goRegister() {
+    this.returnURL = "/tabs/tab1"
+    this.router.navigate([this.returnURL])
   }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TimerService } from 'src/app/timer.service'
 
 @Component({
   selector: 'app-tab3',
@@ -8,8 +9,8 @@ import { Component } from '@angular/core';
 export class Tab3Page {
   counter: { min: number, sec: number }
   timerPaused: boolean = false;
-disabled=false
-  constructor() {}
+
+  constructor(private s:TimerService) {}
   ngOnInit() {
     this.starttimer()  
     }
@@ -24,15 +25,21 @@ disabled=false
         } 
         else this.counter.sec -= 1
       }
-        if (this.counter.min === 0 && this.counter.sec == 0) clearInterval(intervalId)
-      }, 1000)
+        if (this.counter.min === 0 && this.counter.sec == 0) 
+        this.counter = { min: 3, sec: 0 }
+      
+      },1000)
+      
     }
   
     clickEvent(){
       this.timerPaused=false
-      console.log(this.counter)
-      
+      console.log("Timer stopped at:",this.counter)
+      this.s.timer=this.counter
+      this.counter = { min: 3, sec: 0 }
+      this.starttimer()
     }
+    
    
   }
 

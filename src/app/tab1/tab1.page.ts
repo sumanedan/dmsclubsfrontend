@@ -27,9 +27,9 @@ export class Tab1Page {
     this.service.password=this.password
     console.log(this.service.username)
     console.log(this.service.password)
-    
+   
     this.returnURL = "/tabs/tab2"
     this.router.navigate([this.returnURL])
-
+  
 }
 }

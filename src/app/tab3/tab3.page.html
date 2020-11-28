@@ -78,14 +78,14 @@
   
       <div style="padding:10px;margin-left:50px;margin-top:20px">
         <ion-row>
-          <ion-col size-md="4" size-lg="5" size-xs="4">
-            <ion-button color="success" (click)="clickEvent()">Join Green</ion-button>
+          <ion-col size-md="4" size-lg="5" size-xs="12">
+            <ion-button color="success" (click)="clickEvent()" style="width:125px">Join Green</ion-button>
           </ion-col>
-          <ion-col size-md="4" size-lg="5" size-xs="4">
-            <ion-button (click)="clickEvent()">Join Violet</ion-button>
+          <ion-col size-md="4" size-lg="5" size-xs="12">
+            <ion-button (click)="clickEvent()" style="width:125px">Join Violet</ion-button>
           </ion-col>
-          <ion-col size-md="4" size-lg="2" size-xs="2">
-            <ion-button color="danger" (click)="clickEvent()">Join Red</ion-button>
+          <ion-col size-md="4" size-lg="2" size-xs="12">
+            <ion-button color="danger" (click)="clickEvent()" style="width:125px">Join Red</ion-button>
           </ion-col>
         </ion-row>
       </div>
@@ -210,7 +210,7 @@
               </ion-tab-button>
             </ion-toolbar>
             <ion-toolbar>
-              <ion-tab-button tab="settings" routerLink="/tabs/tab3/dashboard">
+              <ion-tab-button routerLink="/tab3/dashboard">
                 <ion-icon name="person"></ion-icon>
                 <ion-label>My</ion-label>
               </ion-tab-button>

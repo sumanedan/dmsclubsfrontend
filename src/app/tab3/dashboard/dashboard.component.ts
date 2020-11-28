@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TimerService} from 'src/app/timer.service'
 
 @Component({
   selector: 'app-dashboard',
@@ -6,33 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  counter: { min: number, sec: number }
-  timerPaused: boolean = false;
-disabled=false
-  constructor() { }
+  timer:{min:number,sec:number}
+  constructor(private ser:TimerService) { }
 
   ngOnInit() {
-  this.starttimer()  
-  }
-  starttimer(){
-  this.timerPaused=true
-    this.counter = { min: 3, sec: 0 }
-    let intervalId = setInterval(() => {
-      if(this.timerPaused){
-      if (this.counter.sec - 1 == -1) {
-        this.counter.min -= 1;
-        this.counter.sec = 59
-      } 
-      else this.counter.sec -= 1
-    }
-      if (this.counter.min === 0 && this.counter.sec == 0) clearInterval(intervalId)
-    }, 1000)
-  }
+this.timer=this.ser.timer
+console.log(JSON.stringify(this.timer.min))
+console.log(JSON.stringify(this.timer.sec))
 
-  clickEvent(){
-    this.timerPaused=false
-    console.log(this.counter)
-    
   }
+  
  
 }

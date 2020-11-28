@@ -11,6 +11,11 @@ const routes: Routes = [
   {
     path:"dashboard",
     component:DashboardComponent,
+  },
+  {
+    path: "inside",
+    loadChildren: () =>
+      import("../tab3/tab3.module").then((m) => m.Tab3PageModule)
   }
 ];
 
