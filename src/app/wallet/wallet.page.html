@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Withdraw</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="center">
+  <br><br>
+  <ion-grid>
+    <ion-row color="primary" style="margin-top:200px">
+      <ion-col size-md="3" size-lg="3" size-xs="3"></ion-col>
+      <ion-col size-md="6" size-lg="6" size-xs="6">
+      <ion-list>
+        <ion-item lines="full">
+          <ion-input type="text"  placeholder="Enter the amount" [(ngModel)]="amount"></ion-input>
+        </ion-item>
+      </ion-list>
+      <br>
+      <div class ="button"><ion-button expand="block"  (click)="withdraw()">Withdraw</ion-button></div>
+      </ion-col>
+    </ion-row>
+    <ion-row style="margin-top:300px">
+      <ion-toolbar>
+        <ion-tabs>
+          <ion-tab-bar slot="bottom">
+            <ion-toolbar>
+              <ion-tab-button routerLink="/tab3">
+                <ion-icon name="home"></ion-icon>
+                <ion-label>Home</ion-label>
+              </ion-tab-button>
+            </ion-toolbar>
+            <ion-toolbar>
+              <ion-tab-button routerLink="/tab3">
+                <ion-icon name="trophy-sharp"></ion-icon>
+                <ion-label>Lucky</ion-label>
+              </ion-tab-button>
+            </ion-toolbar>
+            <!-- <ion-toolbar>
+              <ion-tab-button tab="activity">
+                <ion-icon name="trophy-sharp"></ion-icon>
+                <ion-label>Activity</ion-label>
+              </ion-tab-button>
+            </ion-toolbar> -->
+            <ion-toolbar>
+              <ion-tab-button routerLink="/dashboard">
+                <ion-icon name="person"></ion-icon>
+                <ion-label>My</ion-label>
+              </ion-tab-button>
+            </ion-toolbar>
+          </ion-tab-bar>
+      
+        </ion-tabs>
+      </ion-toolbar>
+      </ion-row>
+  </ion-grid>
+</ion-content>
+

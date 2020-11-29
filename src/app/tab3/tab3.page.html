@@ -6,7 +6,7 @@
           <div style="width:100%;height:60px;background-color:rgb(158, 226, 132);padding-top:1px">
             <ion-buttons slot="start" style="margin-top:10px">
               <ion-col size-md="2" size-lg="2" size-xs="3">
-                <ion-button style="background-color: rgb(16, 168, 16)">Recharge</ion-button>
+                <ion-button style="background-color: rgb(16, 168, 16)" routerLink="/deposit">Recharge</ion-button>
               </ion-col>
               <ion-col size-md="9" size-lg="9" size-xs="8">
                 <ion-button style="background-color:white">Read Rule</ion-button>
@@ -58,7 +58,7 @@
         </div>
       </ion-col>
       </ion-row>
-  
+  <form #myform="ngForm" class="form-group">
       <div style="width:100%;margin-left:50px;margin-top: 70px;">
         <ion-row>
           <ion-col size-md="6" size-lg="9" size-xs="6">
@@ -72,6 +72,9 @@
             <ion-label style="margin-left:50px">Count Down</ion-label>
   
             <p><button style="margin-left:50px">{{counter.min}} : {{counter.sec}}</button></p>
+            <p>
+              <ion-input type="text" id="amount" placeholder="Amount" class="form-control" [(ngModel)]="amount" name="amount" style="width:100px;margin-left:40px" required></ion-input>
+            </p>
           </ion-col>
         </ion-row>
       </div>
@@ -79,54 +82,55 @@
       <div style="padding:10px;margin-left:50px;margin-top:20px">
         <ion-row>
           <ion-col size-md="4" size-lg="5" size-xs="12">
-            <ion-button color="success" (click)="clickEvent()" style="width:125px">Join Green</ion-button>
+            <ion-button color="success" style="width:125px" [disabled]="myform.invalid">Join Green</ion-button>
           </ion-col>
           <ion-col size-md="4" size-lg="5" size-xs="12">
-            <ion-button (click)="clickEvent()" style="width:125px">Join Violet</ion-button>
+            <ion-button style="width:125px" [disabled]="myform.invalid">Join Blue</ion-button>
           </ion-col>
           <ion-col size-md="4" size-lg="2" size-xs="12">
-            <ion-button color="danger" (click)="clickEvent()" style="width:125px">Join Red</ion-button>
+            <ion-button color="danger" style="width:125px" [disabled]="myform.invalid">Join Red</ion-button>
           </ion-col>
         </ion-row>
       </div>
       <div style="width:100%;margin-top:20px;margin-left:100px">
         <ion-row>
           <ion-col size-md="2" size-lg="2" size-xs="12">
-            <ion-button style="width:100px;" (click)="clickEvent()">0</ion-button>
+            <ion-button style="width:100px;" [disabled]="myform.invalid">0</ion-button>
           </ion-col>
           <ion-col size-md="2" size-lg="2" size-xs="12">
-            <ion-button style="width:100px;" (click)="clickEvent()">1</ion-button>
+            <ion-button style="width:100px;" [disabled]="myform.invalid">1</ion-button>
           </ion-col>
           <ion-col size-md="2" size-lg="2" size-xs="12">
-            <ion-button style="width:100px;" (click)="clickEvent()">2</ion-button>
+            <ion-button style="width:100px;"[disabled]="myform.invalid">2</ion-button>
           </ion-col>
           <ion-col size-md="2" size-lg="2" size-xs="12">
-            <ion-button style="width:100px;" (click)="clickEvent()">3</ion-button>
+            <ion-button style="width:100px;" [disabled]="myform.invalid">3</ion-button>
           </ion-col>
           <ion-col size-md="2" size-lg="3" size-xs="12">
-            <ion-button style="width:100px;" (click)="clickEvent()">4</ion-button>
+            <ion-button style="width:100px;" [disabled]="myform.invalid">4</ion-button>
           </ion-col>
         </ion-row>
       </div>
       <div style="width:100%;margin-top:20px;margin-left:100px">
         <ion-row>
           <ion-col size-md="2" size-lg="2" size-xs="12">
-            <ion-button style="width:100px;" (click)="clickEvent()">5</ion-button>
+            <ion-button style="width:100px;" [disabled]="myform.invalid">5</ion-button>
           </ion-col>
           <ion-col size-md="2" size-lg="2" size-xs="12">
-            <ion-button style="width:100px;" (click)="clickEvent()">6</ion-button>
+            <ion-button style="width:100px;" [disabled]="myform.invalid">6</ion-button>
           </ion-col>
           <ion-col size-md="2" size-lg="2" size-xs="12">
-            <ion-button style="width:100px;" (click)="clickEvent()">7</ion-button>
+            <ion-button style="width:100px;" [disabled]="myform.invalid">7</ion-button>
           </ion-col>
           <ion-col size-md="2" size-lg="2" size-xs="12">
-            <ion-button style="width:100px;" (click)="clickEvent()">8</ion-button>
+            <ion-button style="width:100px;" [disabled]="myform.invalid">8</ion-button>
           </ion-col>
           <ion-col size-md="2" size-lg="3" size-xs="12">
-            <ion-button style="width:100px;" (click)="clickEvent()">9</ion-button>
+            <ion-button style="width:100px;" [disabled]="myform.invalid">9</ion-button>
           </ion-col>
         </ion-row>
       </div>
+    </form>
       <div style="height:70px;background-color:gray;width:100%;margin-top:30px">
         <ion-row>
           <ion-col size="12" size-sm>
@@ -203,14 +207,14 @@
                 <ion-label>Lucky</ion-label>
               </ion-tab-button>
             </ion-toolbar>
-            <ion-toolbar>
+            <!-- <ion-toolbar>
               <ion-tab-button tab="activity">
                 <ion-icon name="trophy-sharp"></ion-icon>
                 <ion-label>Activity</ion-label>
               </ion-tab-button>
-            </ion-toolbar>
+            </ion-toolbar> -->
             <ion-toolbar>
-              <ion-tab-button routerLink="/tab3/dashboard">
+              <ion-tab-button routerLink="/dashboard">
                 <ion-icon name="person"></ion-icon>
                 <ion-label>My</ion-label>
               </ion-tab-button>

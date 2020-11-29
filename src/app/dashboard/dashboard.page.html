@@ -6,15 +6,6 @@
 
         <ion-col size-md="3" size-lg="5" size-xs="4">
           <div>
-            <ion-icon name="hourglass-outline" style="font-size:30px"></ion-icon>
-            <div>
-              <p>TIMER</p>
-              <p style="color: red;">{{timer.min}}.{{timer.sec}}</p>
-            </div>
-          </div>
-        </ion-col>
-        <ion-col size-md="12" size-lg="4" size-xs="12">
-          <div>
             <ion-icon name="trophy" style="font-size: 30px;"></ion-icon>
             <div>
               <h6>PERIOD</h6>
@@ -23,22 +14,34 @@
 
           </div>
         </ion-col>
+        <ion-col size-md="12" size-lg="4" size-xs="12">
+          
+          <!-- <div>
+            <ion-icon name="hourglass-outline" style="font-size:30px"></ion-icon>
+            <div>
+              <p>TIMER</p> -->
+              <!-- <p style="color: red;">{{timer.min}}.{{timer.sec}}</p> -->
+              <!-- <p style="color: red;">{{counter.min}} : {{counter.sec}}</p>
+
+            </div>
+          </div> -->
+        </ion-col>
         <ion-col size-md="12" size-lg="3" size-xs="12">
           <div>
-            <ion-label>STEPHEN NEDUMPALLY</ion-label>
+            <ion-label>9995768901</ion-label>
             <span>
               <ion-icon name="person-outline" style="font-size: 20px;"></ion-icon>
             </span>
 
             <p>AVAILABLE BALANCE 12,456.00</p>
-            <ion-button color="success" style="background-color: green;">RECHARGE</ion-button>
-            <ion-button color="danger" style="background-color: red;">WITHDRAW</ion-button>
+            <ion-button color="success" style="background-color: green;" (click)="recharge()">RECHARGE</ion-button>
+            <ion-button color="danger" style="background-color: red;" (click)="nextpage()">WITHDRAW</ion-button>
           </div>
         </ion-col>
     </ion-row>
     
   </ion-toolbar>
-    <ion-row>
+    <!-- <ion-row>
       <ion-col size-md="12" size-lg="12" size-xs="12">
         <div style="height:30px">
 
@@ -74,10 +77,10 @@
           </ion-tabs>
         </div>
       </ion-col>
-    </ion-row>
+    </ion-row> -->
 
 
-    <div style="padding:10px;margin-left:50px;margin-top:20px">
+    <!-- <div style="padding:10px;margin-left:50px;margin-top:20px">
       <ion-row>
         <ion-col size-md="4" size-lg="5" size-xs="12">
           <ion-button color="success" style="width:125px">Join Green</ion-button>
@@ -89,7 +92,7 @@
           <ion-button color="danger" style="width:125px">Join Red</ion-button>
         </ion-col>
       </ion-row>
-    </div>
+    </div> -->
 
     
 
@@ -182,19 +185,19 @@
       </table>
     </div>
 
-
+<ion-row style="margin-top:100px">
     <ion-toolbar>
       <ion-tabs style="margin-left: 100px;">
         <ion-tab-bar>
           <ion-toolbar>
-            <ion-tab-button tab="home">
+            <ion-tab-button routerLink="/tab3">
               <ion-icon name="home-sharp"></ion-icon>
               <ion-label>Home</ion-label>
             </ion-tab-button>
           </ion-toolbar>
 
           <ion-toolbar>
-            <ion-tab-button tab="win">
+            <ion-tab-button routerLink="/tab3">
               <ion-icon name="trophy-sharp"></ion-icon>
               <ion-label>WIN</ion-label>
             </ion-tab-button>
@@ -209,5 +212,6 @@
         </ion-tab-bar>
       </ion-tabs>
     </ion-toolbar>
+  </ion-row>
   </ion-grid>
 </ion-content>

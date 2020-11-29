@@ -1,5 +1,7 @@
 {
   "name": "dmsclubstabs",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

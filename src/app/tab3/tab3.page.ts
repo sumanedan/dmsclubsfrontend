@@ -29,17 +29,19 @@ export class Tab3Page {
         this.counter = { min: 3, sec: 0 }
       
       },1000)
+      this.s.timer=this.counter
+      console.log(this.s.timer)
       
     }
   
-    clickEvent(){
-      this.timerPaused=false
-      console.log("Timer stopped at:",this.counter)
-      this.s.timer=this.counter
-      this.counter = { min: 3, sec: 0 }
-      this.starttimer()
-    }
+    // clickEvent(){
+    //   this.timerPaused=false
+    //   console.log("Timer stopped at:",this.counter)
+     
+     
+     
+    // }
     
-   
+  
   }
 

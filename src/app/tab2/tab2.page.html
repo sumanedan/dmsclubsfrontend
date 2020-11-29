@@ -19,7 +19,7 @@
 
 <form #myform="ngForm" class="form-group">
 <ion-item lines="full">
- <ion-input placeholder="Mobile Number" class="form-control" [(ngModel)]="mobilenumber" name="mobilenumber" required></ion-input>
+ <ion-input placeholder="Mobile Number" class="form-control" [(ngModel)]="mobilenumber" name="mobilenumber" minlength="10" maxlength="10" required></ion-input>
 </ion-item>
 <ion-item lines="full">
  <ion-input type="password" placeholder="Password" class="form-control" [(ngModel)]="password" name="password" required></ion-input>

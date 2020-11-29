@@ -1,0 +1,35 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>payment</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid text-center>
+    <ion-row>
+      <ion-col>
+      
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-card class="welcome-card">
+    <ion-img src="/assets/razorpay.jpeg"></ion-img>
+    <ion-card-header>
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-title>Razorpay </ion-card-title>
+      <ion-row>
+        <ion-col>
+          Total Payment
+        </ion-col>
+        <ion-col>
+          {{currencyIcon}}{{paymentAmount/100}}
+        </ion-col>
+      </ion-row>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button expand="full" color="success" (click)="payWithRazor()">Pay with RazorPay</ion-button>
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>

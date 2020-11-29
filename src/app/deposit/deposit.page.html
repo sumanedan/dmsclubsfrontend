@@ -1,0 +1,77 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab 2
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="center">
+  <ion-grid>
+
+<ion-toolbar>
+  
+  <ion-buttons slot="start">
+   
+  </ion-buttons>
+  <ion-title style="background-color: rgb(32, 127, 190);width:100%;height:60px;margin-top:6px">RECHARGE</ion-title>
+
+</ion-toolbar>
+<ion-row color="primary" style="margin-top:150px">
+  <ion-col size-md="3" size-lg="3" size-xs="3"></ion-col>
+<ion-col size-md="6" size-lg="6" size-xs="6">
+
+
+<ion-list>
+<ion-item lines="full">
+<ion-input placeholder="Deposit Amount"[(ngModel)]="amount"></ion-input>
+</ion-item>
+</ion-list>
+<br>
+<div class ="button"><ion-button expand="block"  (click)="Payment()">Deposit</ion-button></div>
+
+
+
+</ion-col>
+
+</ion-row>
+<ion-row style="margin-top:300px">
+<ion-toolbar>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-toolbar>
+        <ion-tab-button routerLink="/tab3">
+          <ion-icon name="home"></ion-icon>
+          <ion-label>Home</ion-label>
+        </ion-tab-button>
+      </ion-toolbar>
+      <ion-toolbar>
+        <ion-tab-button routerLink="/tab3">
+          <ion-icon name="trophy-sharp"></ion-icon>
+          <ion-label>Lucky</ion-label>
+        </ion-tab-button>
+      </ion-toolbar>
+      <!-- <ion-toolbar>
+        <ion-tab-button tab="activity">
+          <ion-icon name="trophy-sharp"></ion-icon>
+          <ion-label>Activity</ion-label>
+        </ion-tab-button>
+      </ion-toolbar> -->
+      <ion-toolbar>
+        <ion-tab-button routerLink="/dashboard">
+          <ion-icon name="person"></ion-icon>
+          <ion-label>My</ion-label>
+        </ion-tab-button>
+      </ion-toolbar>
+    </ion-tab-bar>
+
+  </ion-tabs>
+</ion-toolbar>
+</ion-row>
+</ion-grid>
+</ion-content>
+
+
+

@@ -28,8 +28,8 @@ export class Tab2Page {
         // setTimeout(function () {
         //   document.getElementById("load").style.visibility = "visible";
         // }, 1000);
-        this.returnURL = "/tab3"
-        this.router.navigate([this.returnURL])
+        // this.returnURL = "/tab3"
+        // this.router.navigate([this.returnURL])
      
     }
       else {
