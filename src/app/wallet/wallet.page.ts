@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { HttpClient } from '@angular/common/http';
+import {WithdrawService} from '../withdraw.service'
 
 @Component({
   selector: 'app-wallet',
@@ -9,16 +11,24 @@ import { NavController } from '@ionic/angular';
 export class WalletPage implements OnInit {
   amount:number
   balance:number=10000
-  constructor(public navCtrl:NavController) { }
+  withdrawlist:any
+  upi:number
+  constructor(public navCtrl:NavController,private withd:WithdrawService,private _http: HttpClient) { }
 
   ngOnInit() {
+    this.withd.getData().subscribe(list => {
+      this.withdrawlist = list
+      console.log(this.withdrawlist)
+      console.log(typeof (this.withdrawlist))
+    })
   }
   withdraw(){
+    
     if(this.amount<=this.balance){
       alert("Amount Withdrawn Successfully..")
     }else{
       alert("Withdrawal is not possible..")
     }
-
+console.log(this.upi)
   }
 }

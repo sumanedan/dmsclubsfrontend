@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import {ValiduserService} from 'src/app/validuser.service'
-
+import {SignupService} from '../signup.service'
+import { HttpClient } from '@angular/common/http';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-tab1',
@@ -17,19 +19,40 @@ export class Tab1Page {
   code:number
   accept:string
   returnURL: string = ""
-  constructor(public navCtrl:NavController,private service:ValiduserService,private router: Router) {}
+  signlist:any
+  constructor(public navCtrl:NavController,private service:ValiduserService,private router: Router,private sign:SignupService,private _http: HttpClient) {}
+  ngOnInit(){
+    // this.sign.getData().subscribe(list => {
+    //   this.signlist = list
+    //   console.log(this.signlist)
+    //   console.log(typeof (this.signlist))
+    // })
+  }
   register(){
     console.log("Mobile Number : ",this.mobile);
     console.log("Password : ",this.password);
     console.log("Recommendation Code : ",this.code);
     console.log("Privacy Policy : ",this.accept);
+   
     this.service.username=this.mobile
     this.service.password=this.password
     console.log(this.service.username)
     console.log(this.service.password)
-   
-    this.returnURL = "/tabs/tab2"
+   this._http.post('http://localhost/prediction/Predict/signup',{
+    "mobile":this.mobile,
+    "password":this.password,
+    "type":"user",
+    "username":this.mobile
+}).subscribe(data=>{
+  console.log(data);
+  if(data==200)
+  {
+    
+  }
+  this.returnURL = "/tabs/tab2"
     this.router.navigate([this.returnURL])
+})
+    
   
 }
 }

@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Withdraw</ion-title>
+    <ion-title style="background-color: rgb(32, 127, 190);width:100%;height:60px;margin-top:6px;color:white;text-align:center">WITHDRAW</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,6 +13,9 @@
       <ion-list>
         <ion-item lines="full">
           <ion-input type="text"  placeholder="Enter the amount" [(ngModel)]="amount"></ion-input>
+        </ion-item>
+        <ion-item lines="full">
+          <ion-input type="text"  placeholder="UPI ID" [(ngModel)]="upi"></ion-input>
         </ion-item>
       </ion-list>
       <br>
