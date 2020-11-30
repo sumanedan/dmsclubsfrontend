@@ -20,6 +20,7 @@ export class Tab1Page {
   accept:string
   returnURL: string = ""
   signlist:any
+  
   constructor(public navCtrl:NavController,private service:ValiduserService,private router: Router,private sign:SignupService,private _http: HttpClient) {}
   ngOnInit(){
     // this.sign.getData().subscribe(list => {
@@ -27,6 +28,11 @@ export class Tab1Page {
     //   console.log(this.signlist)
     //   console.log(typeof (this.signlist))
     // })
+    this._http.get('http://localhost/prediction/Predict/userlist').subscribe(data=>
+    console.log(data)
+    
+    
+  )
   }
   register(){
     console.log("Mobile Number : ",this.mobile);
@@ -38,20 +44,17 @@ export class Tab1Page {
     this.service.password=this.password
     console.log(this.service.username)
     console.log(this.service.password)
-   this._http.post('http://localhost/prediction/Predict/signup',{
-    "mobile":this.mobile,
+    const data={"mobile":this.mobile,
     "password":this.password,
     "type":"user",
     "username":this.mobile
-}).subscribe(data=>{
-  console.log(data);
-  if(data==200)
-  {
-    
-  }
-  this.returnURL = "/tabs/tab2"
-    this.router.navigate([this.returnURL])
-})
+
+    }
+   this._http.post('http://localhost:80/prediction/Predict/signup',data).subscribe(lag=>
+  console.log(data)
+  
+  
+)
     
   
 }
