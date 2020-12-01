@@ -13,17 +13,23 @@
     <ion-row style="height:200px"></ion-row>
 
 <ion-row color="primary" justify-content-center>
-  <ion-col size-md="3"size-lg="3" size-xs="3"></ion-col>
-<ion-col align-self-center size-md="6"size-lg="6" size-xs="6">
+  
+<ion-col align-self-center size-md="12"size-lg="12" size-xs="12">
 
 
 <form #myform="ngForm" class="form-group">
 <ion-item lines="full">
- <ion-input placeholder="Mobile Number" class="form-control" [(ngModel)]="mobilenumber" name="mobilenumber" minlength="10" maxlength="10" required></ion-input>
+ <ion-input placeholder="Mobile Number" class="form-control" #mob="ngModel" [(ngModel)]="mobilenumber" name="mobilenumber" minlength="10" maxlength="10" required></ion-input>
 </ion-item>
+<div *ngIf="mob.invalid && (mob.dirty || mob.touched)" style="color:red;margin-left:50px">
+  Mobile Number is Required
+</div>
 <ion-item lines="full">
- <ion-input type="password" placeholder="Password" class="form-control" [(ngModel)]="password" name="password" required></ion-input>
+ <ion-input type="password" placeholder="Password" #pass="ngModel" class="form-control" [(ngModel)]="password" name="password" required></ion-input>
 </ion-item>
+<div *ngIf="pass.invalid && (pass.dirty || pass.touched)" style="color:red;margin-left:50px">
+  Password is Required
+</div>
 </form>
 <br>
 <div class ="button"><ion-button expand="block"  (click)="login()" [disabled]="myform.invalid" routerLink="/tab3">Login</ion-button></div>

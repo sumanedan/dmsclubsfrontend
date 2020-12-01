@@ -39,25 +39,25 @@ export class Tab2Page {
       if (this.mobilenumber == this.ser.username && this.password == this.ser.password) {
         console.log(this.mobilenumber)
         console.log(this.ser.username)
-
+        const data={
+        "password":this.password,
+        
+        "username":this.mobilenumber
+    
+        }
         
         // setTimeout(function () {
         //   document.getElementById("load").style.visibility = "visible";
         // }, 1000);
         
-        this._http.post('http://localhost/prediction/Predict/log',{
-          "username":this.mobilenumber,
-          "password":this.password,
+        // this._http.post<any>('http://localhost/prediction/Predict/log',JSON.stringify(data)
+        //   ).subscribe();
         
-      }).subscribe(data=>{
-        console.log(data);
-        this.returnURL = "/tab3"
-        this.router.navigate([this.returnURL])
-        
-          })}
-      else {
-        alert("invalid login")
-      }
+          this.returnURL = "/tab3"
+          this.router.navigate([this.returnURL])}
+      // else {
+      //   alert("invalid login")
+      // }
     }
 
   }

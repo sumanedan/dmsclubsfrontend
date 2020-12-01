@@ -72,64 +72,66 @@
             <ion-label style="margin-left:50px">Count Down</ion-label>
   
             <p><button style="margin-left:50px">{{counter.min}} : {{counter.sec}}</button></p>
-            <p>
+            <!-- <p>
               <ion-input type="text" id="amount" placeholder="Amount" class="form-control" [(ngModel)]="amount" name="amount" style="width:100px;margin-left:40px" required></ion-input>
-            </p>
+            </p> -->
+
           </ion-col>
         </ion-row>
       </div>
-  
+  <div>
       <div style="padding:10px;margin-left:50px;margin-top:20px">
         <ion-row>
-          <ion-col size-md="4" size-lg="5" size-xs="12">
-            <ion-button color="success" style="width:125px" [disabled]="myform.invalid">Join Green</ion-button>
+          <ion-col size-md="4" size-lg="5" size-xs="4">
+            <ion-button color="success" style="width:125px" (click)="OpenModelgreen()" disabled="{{disabled}}" >Join Green</ion-button>
           </ion-col>
-          <ion-col size-md="4" size-lg="5" size-xs="12">
-            <ion-button style="width:125px" [disabled]="myform.invalid">Join Blue</ion-button>
+          <ion-col size-md="4" size-lg="5" size-xs="4">
+            <ion-button style="width:125px" (click)="OpenModelblue()" disabled="{{disabled}}">Join Blue</ion-button>
           </ion-col>
-          <ion-col size-md="4" size-lg="2" size-xs="12">
-            <ion-button color="danger" style="width:125px" [disabled]="myform.invalid">Join Red</ion-button>
+          <ion-col size-md="4" size-lg="2" size-xs="4">
+            <ion-button color="danger" style="width:125px" (click)="OpenModelred()" disabled="{{disabled}}">Join Red</ion-button>
           </ion-col>
         </ion-row>
       </div>
-      <div style="width:100%;margin-top:20px;margin-left:100px">
+      <div style="width:100%;margin-top:20px;margin-left:50px;padding-left:100px">
         <ion-row>
-          <ion-col size-md="2" size-lg="2" size-xs="12">
-            <ion-button style="width:100px;" [disabled]="myform.invalid">0</ion-button>
+          <ion-col size-md="2" size-lg="3" size-xs="2">
+            <ion-button disabled="{{disabled}}">0</ion-button>
           </ion-col>
-          <ion-col size-md="2" size-lg="2" size-xs="12">
-            <ion-button style="width:100px;" [disabled]="myform.invalid">1</ion-button>
+          <ion-col size-md="2" size-lg="2" size-xs="2">
+            <ion-button disabled="{{disabled}}">1</ion-button>
           </ion-col>
-          <ion-col size-md="2" size-lg="2" size-xs="12">
-            <ion-button style="width:100px;"[disabled]="myform.invalid">2</ion-button>
+          <ion-col size-md="2" size-lg="2" size-xs="2">
+            <ion-button disabled="{{disabled}}">2</ion-button>
           </ion-col>
-          <ion-col size-md="2" size-lg="2" size-xs="12">
-            <ion-button style="width:100px;" [disabled]="myform.invalid">3</ion-button>
+          <ion-col size-md="2" size-lg="2" size-xs="2">
+            <ion-button disabled="{{disabled}}">3</ion-button>
           </ion-col>
-          <ion-col size-md="2" size-lg="3" size-xs="12">
-            <ion-button style="width:100px;" [disabled]="myform.invalid">4</ion-button>
+          <ion-col size-md="2" size-lg="3" size-xs="2">
+            <ion-button disabled="{{disabled}}">4</ion-button>
           </ion-col>
         </ion-row>
       </div>
-      <div style="width:100%;margin-top:20px;margin-left:100px">
+      <div style="width:100%;margin-top:20px;margin-left:50px;padding-left:100px">
         <ion-row>
-          <ion-col size-md="2" size-lg="2" size-xs="12">
-            <ion-button style="width:100px;" [disabled]="myform.invalid">5</ion-button>
+          <ion-col size-md="2" size-lg="3" size-xs="2">
+            <ion-button disabled="{{disabled}}">5</ion-button>
           </ion-col>
-          <ion-col size-md="2" size-lg="2" size-xs="12">
-            <ion-button style="width:100px;" [disabled]="myform.invalid">6</ion-button>
+          <ion-col size-md="2" size-lg="2" size-xs="2">
+            <ion-button disabled="{{disabled}}">6</ion-button>
           </ion-col>
-          <ion-col size-md="2" size-lg="2" size-xs="12">
-            <ion-button style="width:100px;" [disabled]="myform.invalid">7</ion-button>
+          <ion-col size-md="2" size-lg="2" size-xs="2">
+            <ion-button disabled="{{disabled}}">7</ion-button>
           </ion-col>
-          <ion-col size-md="2" size-lg="2" size-xs="12">
-            <ion-button style="width:100px;" [disabled]="myform.invalid">8</ion-button>
+          <ion-col size-md="2" size-lg="2" size-xs="2">
+            <ion-button disabled="{{disabled}}">8</ion-button>
           </ion-col>
-          <ion-col size-md="2" size-lg="3" size-xs="12">
-            <ion-button style="width:100px;" [disabled]="myform.invalid">9</ion-button>
+          <ion-col size-md="2" size-lg="3" size-xs="2">
+            <ion-button disabled="{{disabled}}">9</ion-button>
           </ion-col>
         </ion-row>
       </div>
+    </div>
     </form>
       <div style="height:70px;background-color:gray;width:100%;margin-top:30px">
         <ion-row>
@@ -223,7 +225,11 @@
   
         </ion-tabs>
       </ion-toolbar>
+      <ion-toolbar>
+        
+      </ion-toolbar>
     </ion-grid>
+    
   </ion-content>
 
 

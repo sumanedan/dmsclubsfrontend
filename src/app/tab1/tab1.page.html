@@ -1,52 +1,67 @@
-<ion-content [fullscreen]="true">
-
-  <ion-header [translucent]="true">
-    <ion-toolbar>
-      <ion-title>
-        SignUp
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-content class="center">
-    <ion-grid>
-      <ion-row style="height:200px"></ion-row>
-      <ion-row color="primary" justify-content-center>
-
-        <ion-col size-md="3" size-lg="3" size-xs="3"></ion-col>
-        <ion-col size-md="6" size-lg="6" size-xs="6">
+<ion-content>
+  <ion-toolbar>
+ 
+    <ion-buttons slot="start">
+      <ion-back-button style="background-color: rgb(32, 127, 190);width:100%;height:40px;;padding-top:6px;margin-top:6px;margin-bottom:6px">   </ion-back-button>
+    </ion-buttons>
+    <ion-title style="background-color: rgb(32, 127, 190);width:100%;height:60px;margin-top:6px">SignUp</ion-title>
+ 
+ </ion-toolbar>
+  <ion-grid>
+    <ion-row style="height:200px"></ion-row>
 
 
-          <form #myform="ngForm" class="form-group">
-            <ion-item>
-              <ion-input type="text" class="form-control" #mob="ngModel" placeholder="Mobile Number"
-                [(ngModel)]="mobile" name="mobile" minlength="10" maxlength="10"  required></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input type="password" placeholder="Password" class="form-control" #pass="ngModel"
-                [(ngModel)]="password" name="password" required></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input type="text" class="form-control" #cod="ngModel" placeholder="Recommendation Code"
-                [(ngModel)]="code" name="code"></ion-input>
-            </ion-item>
-            <br>
-            <ion-checkbox [(ngModel)]="accept" class="form-control" #accep="ngModel" name="accept" required>
-            </ion-checkbox>&nbsp;
-            <ion-label>I agree
-              <a href="#">PRIVACY POLICY</a>
-            </ion-label>
+    <form #myform="ngForm" class="form-group">
+      <ion-row color="primary">
+        <ion-col size-md="12" size-lg="12" size-xs="12">
+
+
+
+          <ion-item>
+            <ion-input type="text" class="form-control" #mob="ngModel" placeholder="Mobile Number" [(ngModel)]="mobile"
+              name="mobile" minlength="10" maxlength="10" required></ion-input>
+
+          </ion-item>
+          <div *ngIf="mob.invalid && (mob.dirty || mob.touched)" style="color:red;margin-left:50px">
+            Mobile Number is Required
+          </div>
+         
+          <ion-item>
+            <ion-input type="password" placeholder="Password" class="form-control" #pass="ngModel"
+              [(ngModel)]="password" name="password" required></ion-input>
+          
+          </ion-item>
+          <div *ngIf="pass.invalid && (pass.dirty || pass.touched)" style="color:red;margin-left:50px">
+            Password is Required
+          </div>
+          <ion-item>
+            <ion-input type="text" class="form-control" #cod="ngModel" placeholder="Recommendation Code"
+              [(ngModel)]="code" name="code"></ion-input>
             
-            <br>
-            <div class="button">
-              <ion-button expand="block" (click)="register()" [disabled]="myform.invalid || !accept">Register</ion-button>
-            </div>
-          </form>
+          </ion-item>
+          <br>
+          <ion-checkbox [(ngModel)]="accept" class="form-control" #accep="ngModel" name="accept" required>
+          </ion-checkbox>&nbsp;
+          <ion-label>I agree
+            <a href="#">PRIVACY POLICY</a>
+          </ion-label>
+          
         </ion-col>
       </ion-row>
-    </ion-grid>
 
-  </ion-content>
+      <ion-row>
+        <ion-col>
+          <div class="button">
+            <ion-button expand="block" (click)="register()" [disabled]="myform.invalid || !accept">Register</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </form>
+
+
+  </ion-grid>
+
+
 
 
 

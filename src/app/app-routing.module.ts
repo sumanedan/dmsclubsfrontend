@@ -29,6 +29,18 @@ const routes: Routes = [
     path: 'dashboard',
     loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
   },
+  {
+    path: 'popup',
+    loadChildren: () => import('./popup/popup.module').then( m => m.PopupPageModule)
+  },
+  {
+    path: 'popupblue',
+    loadChildren: () => import('./popupblue/popupblue.module').then( m => m.PopupbluePageModule)
+  },
+  {
+    path: 'popupred',
+    loadChildren: () => import('./popupred/popupred.module').then( m => m.PopupredPageModule)
+  },
   
 ];
 @NgModule({

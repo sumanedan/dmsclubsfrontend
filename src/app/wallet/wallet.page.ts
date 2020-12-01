@@ -23,18 +23,18 @@ export class WalletPage implements OnInit {
     // })
   }
   withdraw() {
-
+const data={
+  "user_id": "1234567890",
+  "amount": this.amount,
+  "upi_id": this.upi
+}
     if (this.amount <= this.balance) {
       alert("Amount Withdrawn Successfully..")
     } else {
       alert("Withdrawal is not possible..")
     }
     console.log(this.upi)
-    this._http.post('http://localhost/prediction/Predict/withdrawal', {
-      "user_id": "user",
-      "amount": this.amount,
-      "upi_id": this.upi
-    }).subscribe(data => {
+    this._http.post<any>('http://localhost/prediction/Predict/withdrawal', JSON.stringify(data)).subscribe(data => {
       console.log(data);
       if (data == 200) {
 
