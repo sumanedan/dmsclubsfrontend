@@ -6,5 +6,6 @@ import { Injectable } from '@angular/core';
 export class ValiduserService {
 username:number
 password:string
+upi:number
   constructor() { }
 }

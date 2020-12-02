@@ -1,46 +1,67 @@
 <ion-content overflow-scroll="true">
   <ion-grid>
     <ion-toolbar>
-    <ion-row>
-     
 
-        <ion-col size-md="3" size-lg="5" size-xs="4">
-          <div>
-            <ion-icon name="trophy" style="font-size: 30px;"></ion-icon>
+
+      <div style="background-color:rgb(87, 87, 197);width:100%">
+
+        <ion-row>
+          <ion-col size-md="1" size-lg="1" size-xs="2">
+            <ion-icon name="person-circle-sharp"
+              style="margin-top:20px;font-size:50px;color:white;fill:rgb(212, 208, 208)"></ion-icon>
+          </ion-col>
+          <ion-col size-md="10" size-lg="10" size-xs="8">
             <div>
-              <h6>PERIOD</h6>
-              <h6 style="color: red;">12102536987</h6>
-            </div>
 
-          </div>
-        </ion-col>
+              <div>
+                <h6 style="color:white">User: Member303770</h6>
+                <h6 style="color:white">ID: 303770</h6>
+              </div>
+
+            </div>
+          </ion-col>
+          <ion-col size-md="1" size-lg="1" size-xs="2">
+            <ion-icon name="notifications-circle-sharp"
+              style="margin-top:20px;font-size:50px;color:white;fill:rgb(212, 208, 208)"></ion-icon>
+          </ion-col>
+        </ion-row>
         <ion-col size-md="12" size-lg="4" size-xs="12">
-          
+
           <!-- <div>
             <ion-icon name="hourglass-outline" style="font-size:30px"></ion-icon>
             <div>
               <p>TIMER</p> -->
-              <!-- <p style="color: red;">{{timer.min}}.{{timer.sec}}</p> -->
-              <!-- <p style="color: red;">{{counter.min}} : {{counter.sec}}</p>
+          <!-- <p style="color: red;">{{timer.min}}.{{timer.sec}}</p> -->
+          <!-- <p style="color: red;">{{counter.min}} : {{counter.sec}}</p>
 
             </div>
           </div> -->
         </ion-col>
-        <ion-col size-md="12" size-lg="3" size-xs="12">
-          <div>
-            <ion-label>9995768901</ion-label>
-            <span>
-              <ion-icon name="person-outline" style="font-size: 20px;"></ion-icon>
-            </span>
+        <ion-row>
+          <ion-col size-md="12" size-lg="3" size-xs="12">
+            <div>
 
-            <p>AVAILABLE BALANCE 12,456.00</p>
+              <ion-label style="color:white">Mobile: +91 9995768901</ion-label>
+
+
+              <p style="color:white">AVAILABLE BALANCE: <span>&#8377;</span> 0.00</p>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size-md="2" size-lg="2" size-xs="4">
             <ion-button color="success" style="background-color: green;" (click)="recharge()">RECHARGE</ion-button>
-            <ion-button color="danger" style="background-color: red;" (click)="nextpage()">WITHDRAW</ion-button>
-          </div>
-        </ion-col>
-    </ion-row>
-    
-  </ion-toolbar>
+          </ion-col>
+          <ion-col size-md="8" size-lg="4" size-xs="4">
+            <ion-button color="light" style="background-color: white;color:black" (click)="nextpage()">Change Nick Name
+            </ion-button>
+          </ion-col>
+        </ion-row>
+
+      </div>
+
+
+    </ion-toolbar>
     <!-- <ion-row>
       <ion-col size-md="12" size-lg="12" size-xs="12">
         <div style="height:30px">
@@ -94,9 +115,9 @@
       </ion-row>
     </div> -->
 
-    
 
-    <div style="height:70px;border-bottom: 1px solid gray;width:100%;margin-top:50px">
+
+    <!-- <div style="height:70px;border-bottom: 1px solid gray;width:100%;margin-top:50px">
       <ion-row>
         <ion-col size="12" size-sm>
           <div style="text-align: center;">
@@ -105,9 +126,9 @@
           </div>
         </ion-col>
       </ion-row>
-    </div>
+    </div> -->
 
-    <div>
+    <!-- <div>
       <table style="width:100%;margin-bottom:5px;text-align: center;margin-top:20px">
         <thead style="border-bottom: 1px solid gray;height:40px">
           <th>Period</th>
@@ -183,35 +204,141 @@
           </td>
         </tr>
       </table>
+    </div> -->
+    <div style="width:100%">
+      <ion-list>
+
+
+        <ion-item>
+          <ion-label>
+            <ion-icon name="list-circle-outline" style="font-size:25px"></ion-icon>&emsp;Orders
+          </ion-label>
+          <ion-select>
+            <ion-select-option value="">1</ion-select-option>
+            <ion-select-option value="">2</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <ion-icon name="gift-outline" style="font-size:25px"></ion-icon>&emsp;Promotion
+          </ion-label>
+          <ion-select>
+            <ion-select-option value="">1</ion-select-option>
+            <ion-select-option value="">2</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <ion-icon name="wallet-outline" style="font-size:25px"></ion-icon>&emsp;Wallet
+          </ion-label>
+          <ion-select>
+            <ion-select-option value="">1</ion-select-option>
+            <ion-select-option value="">2</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <ion-icon name="card-outline" style="font-size:25px"></ion-icon>&emsp;Bank Card
+          </ion-label>
+          <ion-select>
+            <ion-select-option value="">1</ion-select-option>
+            <ion-select-option value="">2</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <ion-icon name="business-outline" style="font-size:25px"></ion-icon>&emsp;Address
+          </ion-label>
+          <ion-select>
+            <ion-select-option value="">1</ion-select-option>
+            <ion-select-option value="">2</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <ion-icon name="shield-outline" style="font-size:25px"></ion-icon>&emsp;Account Security
+          </ion-label>
+          <ion-select>
+            <ion-select-option value="">1</ion-select-option>
+            <ion-select-option value="">2</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <ion-icon name="download-outline" style="font-size:25px"></ion-icon>&emsp;App Download
+          </ion-label>
+          <ion-select>
+            <ion-select-option value="">1</ion-select-option>
+            <ion-select-option value="">2</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <ion-icon name="chatbox-ellipses-outline" style="font-size:25px"></ion-icon>&emsp;Complaints and Suggestions
+          </ion-label>
+          <ion-select>
+            <ion-select-option value="">1</ion-select-option>
+            <ion-select-option value="">2</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <ion-icon name="chatbox-outline" style="font-size:25px"></ion-icon>&emsp;About
+          </ion-label>
+          <ion-select>
+            <ion-select-option value="">1</ion-select-option>
+            <ion-select-option value="">2</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+      </ion-list>
+    </div>
+    <div style="height:70px;border-bottom: 1px solid gray;width:100%;margin-top:50px">
+      <ion-row>
+        <ion-col size="12" size-sm>
+          <div style="text-align: center;">
+
+            <ion-button color="light" style="background-color:white;color:black">Logout</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
     </div>
 
-<ion-row style="margin-top:100px">
-    <ion-toolbar>
-      <ion-tabs style="margin-left: 100px;">
-        <ion-tab-bar>
-          <ion-toolbar>
-            <ion-tab-button routerLink="/tab3">
-              <ion-icon name="home-sharp"></ion-icon>
-              <ion-label>Home</ion-label>
-            </ion-tab-button>
-          </ion-toolbar>
+    <ion-row style="margin-top:100px">
+      <ion-toolbar>
+        <ion-tabs>
+          <ion-tab-bar>
+            <ion-toolbar>
+              <ion-tab-button routerLink="/tab3">
+                <ion-icon name="home-sharp"></ion-icon>
+                <ion-label>Home</ion-label>
+              </ion-tab-button>
+            </ion-toolbar>
 
-          <ion-toolbar>
-            <ion-tab-button routerLink="/tab3">
-              <ion-icon name="trophy-sharp"></ion-icon>
-              <ion-label>WIN</ion-label>
-            </ion-tab-button>
-          </ion-toolbar>
+            <ion-toolbar>
+              <ion-tab-button routerLink="/tab3">
+                <ion-icon name="search"></ion-icon>
+                <ion-label>Search</ion-label>
+              </ion-tab-button>
+            </ion-toolbar>
 
-          <ion-toolbar>
-            <ion-tab-button tab="myaccount">
-              <ion-icon name="person-outline"></ion-icon>
-              <ion-label>MY ACCOUNT</ion-label>
-            </ion-tab-button>
-          </ion-toolbar>
-        </ion-tab-bar>
-      </ion-tabs>
-    </ion-toolbar>
-  </ion-row>
+            <ion-toolbar>
+              <ion-tab-button routerLink="/tab3">
+                <ion-icon name="trophy-sharp"></ion-icon>
+                <ion-label>WIN</ion-label>
+              </ion-tab-button>
+            </ion-toolbar>
+
+            <ion-toolbar>
+              <ion-tab-button tab="myaccount">
+                <ion-icon name="person-outline"></ion-icon>
+                <ion-label>My</ion-label>
+              </ion-tab-button>
+            </ion-toolbar>
+          </ion-tab-bar>
+        </ion-tabs>
+      </ion-toolbar>
+    </ion-row>
+
   </ion-grid>
 </ion-content>

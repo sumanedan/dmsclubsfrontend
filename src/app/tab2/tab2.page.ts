@@ -4,7 +4,7 @@ import { NavController } from '@ionic/angular';
 import { ValiduserService } from 'src/app/validuser.service'
 import { LoginService } from '../login.service'
 import { HttpClient } from '@angular/common/http';
-
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab2',
@@ -16,7 +16,7 @@ export class Tab2Page {
   password: string
   returnURL: string = ""
   loginlist:any
-  constructor(public navCtrl: NavController, private router: Router, private ser: ValiduserService,private log:LoginService,private _http: HttpClient) { }
+  constructor(public navCtrl: NavController, private router: Router, private ser: ValiduserService,private log:LoginService,private _http: HttpClient,private alertController: AlertController) { }
   ngOnInit(): void {
     // this.log.getData().subscribe(list => {
     //   this.loginlist = list
@@ -50,14 +50,24 @@ export class Tab2Page {
         //   document.getElementById("load").style.visibility = "visible";
         // }, 1000);
         
-        // this._http.post<any>('http://localhost/prediction/Predict/log',JSON.stringify(data)
-        //   ).subscribe();
+        this._http.post<any>('http://localhost/prediction/Predict/log',JSON.stringify(data)
+        ).subscribe(s=>console.log(s));
         
           this.returnURL = "/tab3"
           this.router.navigate([this.returnURL])}
-      // else {
-      //   alert("invalid login")
-      // }
+      else {
+        this.alertController.create({
+          header: 'Unauthorized User',
+          message: 'Invalid Username or Password',
+          buttons: ['OK']
+        }).then(res => {
+    
+          res.present();
+    
+        });
+      this.returnURL = "/tabs/tab1"
+      this.router.navigate([this.returnURL])
+      }
     }
 
   }
