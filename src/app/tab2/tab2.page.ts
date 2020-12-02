@@ -65,10 +65,10 @@ export class Tab2Page {
           res.present();
     
         });
-      this.returnURL = "/tabs/tab1"
-      this.router.navigate([this.returnURL])
+        this.returnURL = "/tab/tab2"
+        this.router.navigate([this.returnURL])}
       }
-    }
+    
 
   }
   goRegister() {
