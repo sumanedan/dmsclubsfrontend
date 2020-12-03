@@ -7,13 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { PaymentPageRoutingModule } from './payment-routing.module';
 
 import { PaymentPage } from './payment.page';
-
+import { WebIntent } from '@ionic-native/web-intent';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PaymentPageRoutingModule
+    PaymentPageRoutingModule,
+    WebIntent,
+    HttpClientModule
   ],
   declarations: [PaymentPage]
 })

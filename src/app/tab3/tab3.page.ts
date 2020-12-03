@@ -16,48 +16,50 @@ export class Tab3Page {
   timerPaused: boolean = false;
   disabled: boolean
   prediction: any
-
+k:any
   constructor(private s: TimerService, private modalController: ModalController, private _http: HttpClient, private ser: ValiduserService) { }
   ngOnInit() {
     this.disabled = false;
+    
     this.starttimer()
+    
   }
 
   OpenModelgreen() {
     this.modalController.create({ component: PopupPage }).then((modalElement) => {
       modalElement.present();
       this.disabled = true
-      this.prediction = "Green"
+      this.predict("Green")
     })
   }
   OpenModelblue() {
     this.modalController.create({ component: PopupbluePage }).then((modalElement) => {
       modalElement.present();
       this.disabled = true
-      this.prediction = "Yellow"
+      this.predict("Yellow")
     })
   }
   OpenModelred() {
     this.modalController.create({ component: PopupredPage }).then((modalElement) => {
       modalElement.present();
       this.disabled = true
-      this.prediction = "Red"
+      this.predict("Red")
     })
   }
   predict(s) {
     this.prediction = s
-  }
-
-
-  starttimer() {
+    this.disabled=true
     const data = {
-      "user_id": this.ser.username,
+      "user_id": this.ser.id,
       "prediction": this.prediction,
     }
     this._http.post<any>('http://localhost/prediction/Predict/userpredict', JSON.stringify(data)).subscribe(data => {
       console.log(data);
 
     })
+  }
+  starttimer() {
+    
     this.timerPaused = true
     this.counter = { min: 3, sec: 0 }
     let intervalId = setInterval(() => {
@@ -71,6 +73,19 @@ export class Tab3Page {
       if (this.counter.min === 0 && this.counter.sec == 0) {
         this.counter = { min: 3, sec: 0 };
         this.disabled = false
+        const data = {
+          "user_id": this.ser.id,
+          "prediction": this.prediction,
+        }
+        this._http.post<any>('http://localhost/prediction/Predict/number_result', JSON.stringify(data)).subscribe(data => {
+          console.log(data);
+    
+        })
+        this._http.post<any>('http://localhost/prediction/Predict/colour_result', JSON.stringify(data)).subscribe(data => {
+          console.log(data);
+    
+        })
+        
       }
 
     }, 1000)

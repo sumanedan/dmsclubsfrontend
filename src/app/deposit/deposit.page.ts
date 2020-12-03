@@ -16,20 +16,22 @@ export class DepositPage implements OnInit {
   constructor(public navCtrl:NavController,private router: Router,private recharge:RechargeService,private _http: HttpClient,private ser:ValiduserService) { }
 
   ngOnInit() {
-    
+    //console.log(this._http.get("http://localhost/phpmyadmin/sql.php?db=game_predict&table=wallet")) 
   }
   Payment(){
-    const data={
-      "user_id":this.ser.username,
-      "amount": this.amount,
-      "upi_id": this.ser.upi
-    }
-    console.log("Deposit:"+ this.amount);
-    this.returnURL="/payment"
+    this.returnURL="/razorpay"
     this.router.navigate([this.returnURL])
+    const data={
+      "user_id":this.ser.id,
+      "amount":this.amount,
+      
+    }
     this._http.post<any>('http://localhost/prediction/Predict/addwallet',JSON.stringify(data)).subscribe(s => {
 
-      console.log(data)
+    console.log(s)
     })
+    console.log("Deposit:"+ this.amount);
+    
+   
   }
 }

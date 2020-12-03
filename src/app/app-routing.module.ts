@@ -41,6 +41,10 @@ const routes: Routes = [
     path: 'popupred',
     loadChildren: () => import('./popupred/popupred.module').then( m => m.PopupredPageModule)
   },
+  {
+    path: 'razorpay',
+    loadChildren: () => import('./razorpay/razorpay.module').then( m => m.RazorpayPageModule)
+  },
   
 ];
 @NgModule({

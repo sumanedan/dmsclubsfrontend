@@ -7,5 +7,6 @@ export class ValiduserService {
 username:number
 password:string
 upi:number
+id:number
   constructor() { }
 }

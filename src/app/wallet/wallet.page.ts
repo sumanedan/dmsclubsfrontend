@@ -24,26 +24,27 @@ export class WalletPage implements OnInit {
     // })
   }
   withdraw() {
-  this.upi=this.ser.upi
+  this.ser.upi=this.upi
 const data={
-  "user_id":this.ser.username,
+  "user_id":this.ser.id,
   "amount": this.amount,
   "upi_id": this.upi
 }
     if (this.amount <= this.balance) {
       alert("Amount Withdrawn Successfully..")
-    } else {
-      alert("Withdrawal is not possible..")
-    }
-    console.log(this.upi)
-    this._http.post<any>('http://localhost/prediction/Predict/withdrawreq', JSON.stringify(data)).subscribe(data => {
-      console.log(data);
-      
+      this._http.post<any>('http://localhost/prediction/Predict/withdrawreq', JSON.stringify(data)).subscribe(data => {
+      console.log(data); 
     })
     this._http.post<any>('http://localhost/prediction/Predict/withdrawal', JSON.stringify(data)).subscribe(data => {
       console.log(data);
       
     })
+    } else {
+      alert("Withdrawal is not possible..")
+    }
+    console.log(this.upi)
+    
+    
   }
 }
 
