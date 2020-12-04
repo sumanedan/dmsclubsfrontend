@@ -106,6 +106,9 @@ export class Tab3Page {
           if(colour.colour=="Green"){
             colour.colour="success"
           }
+          if(colour.colour=="Blue"){
+            colour.colour="primary"
+          }
           // console.log("color",colour.color)
           // console.log("rewardcolor",colour.reward)
           this.colourlist.push({user_id:colour.user_id,reward:colour.reward,colour:colour.colour})
