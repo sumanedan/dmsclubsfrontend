@@ -48,7 +48,7 @@ export class RazorpayPage implements OnInit {
       // });
       let rzp = new this.winRef.nativeWindow.Razorpay(options);
       rzp.open();
-      console.log(rzp.data)
+      
   }  
 
 

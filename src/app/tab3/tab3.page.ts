@@ -16,7 +16,11 @@ export class Tab3Page {
   timerPaused: boolean = false;
   disabled: boolean
   prediction: any
-k:any
+  k:any
+  resultlist:Array<{user_id:string,reward:string,number:string}>=[]
+  colourlist:Array<{user_id:string,reward:string,colour:string}>=[]
+  color: string;
+
   constructor(private s: TimerService, private modalController: ModalController, private _http: HttpClient, private ser: ValiduserService) { }
   ngOnInit() {
     this.disabled = false;
@@ -36,7 +40,7 @@ k:any
     this.modalController.create({ component: PopupbluePage }).then((modalElement) => {
       modalElement.present();
       this.disabled = true
-      this.predict("Yellow")
+      this.predict("Blue")
     })
   }
   OpenModelred() {
@@ -77,15 +81,38 @@ k:any
           "user_id": this.ser.id,
           "prediction": this.prediction,
         }
-        this._http.post<any>('http://localhost/prediction/Predict/number_result', JSON.stringify(data)).subscribe(data => {
-          console.log(data);
-    
+        this._http.post<any>('http://localhost/prediction/Predict/number_result', JSON.stringify(data)).subscribe(numberlist => {
+          console.log(numberlist);
+           console.log(numberlist.user_id)
+           console.log(typeof numberlist.user_id)
+          // console.log("number",number.number)
+          // console.log("reward",number.reward)
+          //this.resultlist=JSON.stringify(number)
+          //this.resultlist=JSON.stringify(number)
+          this.resultlist.push({user_id:numberlist.user_id,reward:numberlist.reward,number:numberlist.number})
+          console.log(this.resultlist)
+          console.log(typeof this.resultlist)
+          //console.log(this.resultlist)
         })
-        this._http.post<any>('http://localhost/prediction/Predict/colour_result', JSON.stringify(data)).subscribe(data => {
-          console.log(data);
-    
+        this._http.post<any>('http://localhost/prediction/Predict/colour_result', JSON.stringify(data)).subscribe(colour => {
+          console.log(colour);
+          console.log(colour.user_id)
+          if(colour.colour=="Yellow"){
+            colour.colour="primary"
+          }
+          if(colour.colour=="Red"){
+            colour.colour="danger"
+          }
+          if(colour.colour=="Green"){
+            colour.colour="success"
+          }
+          // console.log("color",colour.color)
+          // console.log("rewardcolor",colour.reward)
+          this.colourlist.push({user_id:colour.user_id,reward:colour.reward,colour:colour.colour})
+          
         })
-        
+        document.getElementById("table").style.visibility="visible"
+      
       }
 
     }, 1000)

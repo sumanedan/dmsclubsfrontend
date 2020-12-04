@@ -23,9 +23,8 @@ export class DepositPage implements OnInit {
     this.router.navigate([this.returnURL])
     const data={
       "user_id":this.ser.id,
-      "amount":this.amount,
-      
-    }
+      "amount":this.amount
+      }
     this._http.post<any>('http://localhost/prediction/Predict/addwallet',JSON.stringify(data)).subscribe(s => {
 
     console.log(s)

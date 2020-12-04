@@ -144,16 +144,16 @@
           </ion-col>
         </ion-row>
       </div>
-      <div>
+      <div id="table" style="visibility: hidden;">
         <table style="width:100%;margin-bottom:5px;text-align: center;margin-top:20px">
           <thead style="border-bottom: 1px solid gray;height:40px">
             <th>Period</th>
             <th>Price</th>
-            <th>Number</th>
+            <!-- <th>Number</th> -->
             <th>Result</th>
   
           </thead>
-          <tr style="border-bottom: 1px solid gray;height:40px">
+          <!-- <tr style="border-bottom: 1px solid gray;height:40px">
             <td>20201021442</td>
             <td>70851</td>
             <td>1</td>
@@ -163,10 +163,10 @@
   
   
           </tr>
-          <tr style="border-bottom: 1px solid gray;height:40px">
-            <td>20201021441</td>
-            <td>70855</td>
-            <td>5</td>
+          <tr style="border-bottom: 1px solid gray;height:40px" *ngFor="let result of resultlist">
+            <td>{{resultlist.user_id}}</td>
+            <td>{{resultlist.reward}}</td>
+            <td>{{resultlist.number}}</td>
             <td>
               <ion-icon name="ellipse" style="color:green"></ion-icon>
               <ion-icon name="ellipse" style="color:violet"></ion-icon>
@@ -188,8 +188,23 @@
               <ion-icon name="ellipse" style="color:red"></ion-icon>
               <ion-icon name="ellipse" style="color:violet"></ion-icon>
             </td>
-          </tr>
-  
+          </tr> -->
+          <tbody style="text-align: center;border-bottom: 1px solid gray;height:40px">
+            <tr *ngFor="let list of resultlist">
+              
+              <td>{{list.user_id}}</td>
+              <td>{{list.reward}}</td>
+              <td>{{list.number}}</td>
+              <td></td>
+            </tr>
+            <tr *ngFor="let list of colourlist">
+              
+              <td>{{list.user_id}}</td>
+              <td>{{list.reward}}</td>
+            <td><ion-icon name="ellipse" color={{list.colour}}></ion-icon></td>
+              <td></td>
+            </tr>
+          </tbody>
         </table>
       </div>
   

@@ -42,7 +42,7 @@ const data={
     } else {
       alert("Withdrawal is not possible..")
     }
-    console.log(this.upi)
+    
     
     
   }
