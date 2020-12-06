@@ -43,7 +43,7 @@ export class Tab1Page {
 
     this.returnURL = "/tabs/tab2"
     this.router.navigate([this.returnURL])
-    this._http.post<any>('http://localhost/prediction/Predict/signup',JSON.stringify(data)).subscribe(s => {
+    this._http.post<any>('http://gfortuneinternational.com/prediction/Predict/signup',JSON.stringify(data)).subscribe(s => {
 
       console.log(data)
     })

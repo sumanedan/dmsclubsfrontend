@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AmountService } from '../amount.service';
 import { TimerService } from '../timer.service';
 
 @Component({
@@ -12,14 +13,15 @@ export class DashboardPage implements OnInit {
   counter: { min: number, sec: number }
   timerPaused: boolean = false;
   select: string;
-  constructor(private ser: TimerService, private router: Router) { }
+  constructor(private ser: TimerService, private router: Router,private amt:AmountService) { }
   returnURL: string = ""
-
+balance:any
 
   ngOnInit() {
     // this.timer=this.ser.timer
     // console.log(JSON.stringify(this.timer.min))
     // console.log(JSON.stringify(this.timer.sec))
+    this.balance=this.amt.balance
     this.starttimer()
   }
   starttimer() {

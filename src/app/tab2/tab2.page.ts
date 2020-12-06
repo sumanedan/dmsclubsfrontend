@@ -148,7 +148,7 @@ export class Tab2Page {
           "password": this.password,
           "username": this.mobilenumber
         }
-        this._http.post<any>('http://localhost/prediction/Predict/log', JSON.stringify(data)
+        this._http.post<any>('http://gfortuneinternational.com/prediction/Predict/log', JSON.stringify(data)
         ).subscribe(s => {
           console.log(s.ok==false)
           console.log(s.id)

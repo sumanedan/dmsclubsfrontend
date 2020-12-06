@@ -20,14 +20,16 @@ export class DepositPage implements OnInit {
   }
   Payment(){
     this.returnURL="/razorpay"
+    // this.returnURL="/payment"
     this.router.navigate([this.returnURL])
     const data={
       "user_id":this.ser.id,
       "amount":this.amount
       }
-    this._http.post<any>('http://localhost/prediction/Predict/addwallet',JSON.stringify(data)).subscribe(s => {
+    this._http.post<any>('http://gfortuneinternational.com/prediction/Predict/addwallet',JSON.stringify(data)).subscribe(s => {
 
     console.log(s)
+    
     })
     console.log("Deposit:"+ this.amount);
     

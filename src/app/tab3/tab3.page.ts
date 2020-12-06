@@ -6,6 +6,7 @@ import { PopupbluePage } from '../popupblue/popupblue.page'
 import { PopupredPage } from '../popupred/popupred.page'
 import { HttpClient } from '@angular/common/http';
 import { ValiduserService } from '../validuser.service';
+import { AmountService } from '../amount.service';
 @Component({
   selector: 'app-tab3',
   templateUrl: 'tab3.page.html',
@@ -21,7 +22,7 @@ export class Tab3Page {
   colourlist:Array<{user_id:string,reward:string,colour:string}>=[]
   color: string;
 
-  constructor(private s: TimerService, private modalController: ModalController, private _http: HttpClient, private ser: ValiduserService) { }
+  constructor(private s: TimerService, private modalController: ModalController, private _http: HttpClient, private ser: ValiduserService,private amt:AmountService) { }
   ngOnInit() {
     this.disabled = false;
     
@@ -50,18 +51,23 @@ export class Tab3Page {
       this.predict("Red")
     })
   }
+  
   predict(s) {
-    this.prediction = s
-    this.disabled=true
-    const data = {
-      "user_id": this.ser.id,
-      "prediction": this.prediction,
+    
+      this.prediction = s
+      this.disabled=true
+      const data = {
+        "user_id": this.ser.id,
+        "prediction": this.prediction,
+      }
+      this._http.post<any>('http://gfortuneinternational.com/prediction/Predict/userpredict', JSON.stringify(data)).subscribe(data => {
+        console.log(data);
+  
+      })
     }
-    this._http.post<any>('http://localhost/prediction/Predict/userpredict', JSON.stringify(data)).subscribe(data => {
-      console.log(data);
-
-    })
-  }
+   
+  
+  
   starttimer() {
     
     this.timerPaused = true
@@ -81,7 +87,7 @@ export class Tab3Page {
           "user_id": this.ser.id,
           "prediction": this.prediction,
         }
-        this._http.post<any>('http://localhost/prediction/Predict/number_result', JSON.stringify(data)).subscribe(numberlist => {
+        this._http.post<any>('http://gfortuneinternational.com/prediction/Predict/number_result', JSON.stringify(data)).subscribe(numberlist => {
           console.log(numberlist);
            console.log(numberlist.user_id)
            console.log(typeof numberlist.user_id)
@@ -94,7 +100,7 @@ export class Tab3Page {
           console.log(typeof this.resultlist)
           //console.log(this.resultlist)
         })
-        this._http.post<any>('http://localhost/prediction/Predict/colour_result', JSON.stringify(data)).subscribe(colour => {
+        this._http.post<any>('http://gfortuneinternational.com/prediction/Predict/colour_result', JSON.stringify(data)).subscribe(colour => {
           console.log(colour);
           console.log(colour.user_id)
           if(colour.colour=="Yellow"){

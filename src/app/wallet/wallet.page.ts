@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { WithdrawService } from '../withdraw.service'
 import { ValiduserService } from '../validuser.service';
 
@@ -30,18 +30,30 @@ const data={
   "amount": this.amount,
   "upi_id": this.upi
 }
+const withdata={
+  "user_id":this.ser.id,
+  "amount": this.amount
+  
+}
     if (this.amount <= this.balance) {
-      alert("Amount Withdrawn Successfully..")
-      this._http.post<any>('http://localhost/prediction/Predict/withdrawreq', JSON.stringify(data)).subscribe(data => {
+      
+      this._http.post<any>('http://gfortuneinternational.com/prediction/Predict/withdrawreq', JSON.stringify(data)).subscribe(data => {
       console.log(data); 
     })
-    this._http.post<any>('http://localhost/prediction/Predict/withdrawal', JSON.stringify(data)).subscribe(data => {
+    this._http.post<any>('http://gfortuneinternational.com/prediction/Predict/withdrawal', JSON.stringify(withdata)).subscribe(data => {
       console.log(data);
-      
+      alert("Amount Withdrawn Successfully..")
+    },(error:HttpErrorResponse) => {
+      // console.log(error)
+      // console.log(error.status)
+      if(error.status==400){
+        alert("Withdrawal is not possible....")
+      }
     })
-    } else {
-      alert("Withdrawal is not possible..")
-    }
+    } 
+    // else {
+    //   alert("Withdrawal is not possible..")
+    // }
     
     
     
